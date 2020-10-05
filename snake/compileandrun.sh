@@ -1,2 +1,2 @@
-gcc -o Snake main.c
+g++ -o Snake main.c
 ./snake

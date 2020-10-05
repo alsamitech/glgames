@@ -5,6 +5,7 @@
 #include "game.h"
 
 int gridX, gridY;
+short sDirection = RIGHT;
 int posX=2,posY=20;
 
 void initGrid(int x, int y){gridX=x;gridY=y;}
