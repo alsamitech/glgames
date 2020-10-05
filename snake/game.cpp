@@ -1,6 +1,11 @@
-#include <GL/glut.h>
+//#include <GL/gl.h>
+//#include <GL/glut.h>
+
 
 #include "game.h"
+
+int gridX, gridY;
+int posX=2,posY=20;
 
 void initGrid(int x, int y){gridX=x;gridY=y;}
 
@@ -27,4 +32,8 @@ void unit(int x, int y) {
     glVertex2f(x,y+1);
   
   glEnd();
+}
+
+void drawSnake() {
+  glRectd(posX, posY,posX+1, posY+1);
 }

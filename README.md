@@ -6,5 +6,8 @@ These are a few simple OpenGL games, Writen in C and C++, that are just demonsta
 
 Dependencies:
 OpenGL library
+GCC/G++ Compiler
+
+These games don't requrire Cmake to be compiled!!! You can simply Just use the bash scripts provided! (assuming you have all the dependencies installed).
 
 Under Alsami Open Source Liscense v1
