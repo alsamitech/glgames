@@ -6,7 +6,7 @@
 #define ROWS 40
 #define FPS 10
 
-
+extern short sDirection;
 
 void timer_callback();
 void display_callback();
@@ -52,9 +52,22 @@ void timer_callback(int) {
 }
 
 void keyboard_callback(int key, int, int) {
-
-}
-
-void drawSnake() {
-  
+  switch(key){
+    case GLUT_KEY_UP:
+    if(sDirection!=DOWN)
+      sDirection=UP;
+    break;
+  case GLUT_KEY_DOWN:
+    if(sDirection!=UP)
+      sDirection=DOWN;
+    break;
+  case GLUT_KEY_RIGHT:
+    if (sDirection!=LEFT)
+      sDirection=RIGHT;
+      break;
+  case GLUT_KEY_LEFT:
+    if(sDirection!=RIGHT)
+      sDirection=LEFT;
+    break;
+  }
 }
