@@ -1,11 +1,13 @@
 //#include <GL/gl.h>
 //#include <GL/glut.h>
+#include <time.h>
 
 
 #include "game.h"
 
 int gridX, gridY;
 short sDirection = RIGHT;
+extern bool gameOver;
 int posX=2,posY=20;
 
 void initGrid(int x, int y){gridX=x;gridY=y;}
@@ -35,6 +37,28 @@ void unit(int x, int y) {
   glEnd();
 }
 
+void drawFood() {
+
+}
+
 void drawSnake() {
+  if(sDirection==UP)
+    posY++;
+  else if(sDirection==DOWN)
+    posY--;
+  else if(sDirection==RIGHT)
+    posX++;
+  else if(sDirection==LEFT)
+    posX--;
+  glColor3f(0.0,1.0,0.0);
   glRectd(posX, posY,posX+1, posY+1);
+  if(posX==0 || posX == gridX-1 || posY == 0 || posY==gridY-1) {
+    gameOver=true;
+  }
+}
+void random(int &x, int &y) {
+  int _max = gridX-2;
+  int _min = 1;
+  srand(time(NULL));
+  rand();
 }

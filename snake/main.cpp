@@ -7,6 +7,7 @@
 #define FPS 10
 
 extern short sDirection;
+bool gameOver = false;
 
 void timer_callback();
 void display_callback();
@@ -37,6 +38,11 @@ void display_callback() {
   drawGrid();
   drawSnake();
   glutSwapBuffers();
+  if(gameOver){
+    //MessageBox(NULL, "Your Score : ", "GAME OVER",0);    use this for windows
+
+    exit(0);
+  }
 }
 
 void reshape_callback(int w, int h){
